@@ -1,0 +1,31 @@
+.arrow {
+  display: block;
+  float: left;
+  background: $brand-primary;
+  color: #fff;
+  position: relative;
+  height: 50px;
+  line-height: $font-size-base*1.5 !important;
+  font-size: $font-size-base/1.6 !important;
+  margin-right: 0px !important;
+  padding: 0 35px 0 45px !important;
+  &:first-child {padding-left: 15px !important;}
+  &.mine {
+    background: $gray;
+    &:after {background: $gray;}
+  }
+}
+
+.arrow:after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  right: -18px;
+  display: block;
+  width: 37px;
+  height: 37px;
+  background: $brand-primary;
+  z-index: 99;
+  transform: rotate(45deg);
+  border-radius: 3px;
+}

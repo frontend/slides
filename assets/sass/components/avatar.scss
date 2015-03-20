@@ -1,0 +1,75 @@
+.avatar-wrapper {
+  display: inline-block;
+  width: auto;
+  padding: 0;
+  max-height: 200px;
+  margin-top: 20px !important;
+}
+
+.avatar-wrapper.bubble {
+  margin-top: 120px !important;
+}
+
+.avatar {
+  display: inline-block;
+  position: relative;
+  z-index: -1;
+  background: #fff;
+  height: 100%;
+  padding: 0px !important;
+  margin: 0 !important;
+  float: left;
+  line-height: 0 !important;
+  img {
+    display: inline-block;
+    max-height: 240px;
+    max-width: 100%;
+    margin: 0;
+    height: auto;
+    width: auto;
+    margin-top: -4px;
+  }
+}
+
+.avatar p {
+  font-size: $font-size-base !important;
+  text-align: left;
+  position: absolute;
+  background: #fff;
+  bottom: 110%;
+  left: 10%;
+  width: auto;
+  max-width: 80%;
+  height: auto;
+  padding: 5px 10px;
+  z-index: 99;
+  line-height: 1.1em;
+  font-weight: normal;
+  border: #afafaf solid 1px;
+}
+
+.avatar p:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 19px 12px 0;
+  border-color: #FFFFFF transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  bottom: -18px;
+  left: 23px;
+}
+
+.avatar p:before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 22px 13px 0;
+  border-color: #afafaf transparent;
+  display: block;
+  width: 0;
+  z-index: 0;
+  bottom: -22px;
+  left: 22px;
+}

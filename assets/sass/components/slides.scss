@@ -1,0 +1,22 @@
+body {
+  background: $dust;
+  background: -moz-linear-gradient(top, $dust 0%, $white 45%, $white 55%, $dust 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, $dust), color-stop(45%, $white), color-stop(55%, $white), color-stop(100%, $dust));
+  background: -webkit-linear-gradient(top, $dust 0%, $white 45%, $white 55%, $dust 100%);
+  background: -o-linear-gradient(top, $dust 0%, $white 45%, $white 55%, $dust 100%);
+  background: -ms-linear-gradient(top, $dust 0%, $white 45%, $white 55%, $dust 100%);
+  background: linear-gradient(to bottom, $dust 0%, $white 45%, $white 55%, $dust 100%);
+}
+
+.fade {opacity: 1;}
+
+section {
+
+  text-align: left;
+  padding: 30px 50px !important;
+}
+
+.progress {
+  background: none;
+  box-shadow: none;
+}

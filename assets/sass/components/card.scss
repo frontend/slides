@@ -1,0 +1,17 @@
+section.card {
+  background: $white;
+  box-shadow: rgba(0, 0, 0, 0.156863) 0px 3px 6px 0px, rgba(0, 0, 0, 0.227451) 0px 3px 6px 0px;
+  border-radius: 4px;
+}
+
+section:first-child {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0px;
+}
+
+section section, section section:first-child {
+  background: $white;
+  box-shadow: rgba(0, 0, 0, 0.156863) 0px 3px 6px 0px, rgba(0, 0, 0, 0.227451) 0px 3px 6px 0px;
+  border-radius: 4px;
+}
