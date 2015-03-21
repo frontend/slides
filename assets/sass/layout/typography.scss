@@ -1,3 +1,7 @@
+.reveal, .reveal p {
+  line-height: $line-height-base !important;
+}
+
 h1, h2 {
   text-transform: uppercase;
 }
