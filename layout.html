@@ -40,8 +40,6 @@
     </div>
 
     <script src="js/vendors.min.js"></script>
-    <script src="js/main.min.js"></script>
-
     <script>
 
       // Full list of configuration options available here:
@@ -64,13 +62,12 @@
           { src: 'js/lib/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'js/lib/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
           { src: 'js/lib/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'js/lib/highlight.js', async: true},
           { src: 'js/lib/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
           { src: 'js/lib/notes.js', async: true, condition: function() { return !!document.body.classList; } }
         ]
       });
-
     </script>
+    <script src="js/main.js"></script>
 
 
 

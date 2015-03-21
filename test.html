@@ -47,7 +47,7 @@
   </p>
 </section>
 
-<section>
+<section id="section">
   <h3>Some code</h3>
   <pre><code data-language="js">
 emojify.setConfig({
@@ -61,6 +61,10 @@ emojify.setConfig({
 });
 emojify.run();
   </code></pre>
+  <div class="code-focus">
+    <span class="fragment" data-focus="3,4,5,6" data-state="code"></span>
+    <span class="fragment" data-focus="10" data-state="code"></span>
+  </div>
 </section>
 
 <section>
@@ -88,8 +92,6 @@ emojify.run();
     </div>
 
     <script src="js/vendors.min.js"></script>
-    <script src="js/main.min.js"></script>
-
     <script>
 
       // Full list of configuration options available here:
@@ -112,13 +114,12 @@ emojify.run();
           { src: 'js/lib/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'js/lib/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
           { src: 'js/lib/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'js/lib/highlight.js', async: true},
           { src: 'js/lib/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
           { src: 'js/lib/notes.js', async: true, condition: function() { return !!document.body.classList; } }
         ]
       });
-
     </script>
+    <script src="js/main.js"></script>
 
 
 
