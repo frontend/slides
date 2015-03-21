@@ -2021,11 +2021,11 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
 @media print { .hidden-print { display: none !important; } }
 .reveal code { border: 1px solid #7d7d7d; border-radius: 5px; padding: 5px 10px; }
 
-.reveal pre { background: #272822; word-wrap: break-word; margin: 20px 0px; padding: 25px; color: #fff; font-size: 20px; overflow-x: auto; position: relative; line-height: 1.4em; white-space: pre; -webkit-box-shadow: none; box-shadow: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.reveal pre { background: #272822; word-wrap: break-word; margin: 20px 0px; padding: 25px; color: #fff; font-size: 18px; overflow-x: auto; position: relative; line-height: 1.4em; white-space: pre; -webkit-box-shadow: none; box-shadow: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; font-family: 'Monaco', monospace; }
 
 .rainbow-header { display: none; }
 
-.rainbow-line { display: block; width: auto; word-wrap: break-word; white-space: pre; }
+.rainbow-line { display: block; width: auto; word-wrap: break-word; white-space: pre; padding: 0.1em 0; }
 .rainbow-line span { white-space: pre; }
 .rainbow-line:hover { background-color: #3b3d34; }
 .rainbow-line:hover .rainbow-line-number { background-color: #3b3d34; }
@@ -2067,6 +2067,8 @@ pre .variable.global, pre .variable.class, pre .variable.instance { color: #A6E2
 
 .reveal table.text-center td, .reveal table.text-center th { text-align: center; }
 
+.reveal, .reveal p { line-height: 1.6 !important; }
+
 h1, h2 { text-transform: uppercase; }
 
 h1, h2, h3, h4, h5, h6 { font-weight: 800 !important; margin: 0.2em 0 0.4em 0 !important; }
@@ -2096,7 +2098,7 @@ section section, section section:first-child { background: #fff; -webkit-box-sha
 
 .avatar p:before { content: ''; position: absolute; border-style: solid; border-width: 22px 13px 0; border-color: #afafaf transparent; display: block; width: 0; z-index: 0; bottom: -22px; left: 22px; }
 
-.arrow { display: block; float: left; background: #428bca; color: #fff; position: relative; height: 50px; line-height: 37.5px !important; font-size: 15.625px !important; margin-right: 0px !important; padding: 0 35px 0 45px !important; }
+.arrow { display: block; float: left; background: #428bca; color: #fff; position: relative; height: 50px; line-height: 50px !important; font-size: 20.83333px !important; margin-right: 0px !important; padding: 0 35px 0 45px !important; }
 .arrow:first-child { padding-left: 15px !important; }
 .arrow.mine { background: #555555; }
 .arrow.mine:after { background: #555555; }
