@@ -20,7 +20,8 @@ gulp.task('vendors', function() {
    * CSS VENDORS
    */
   gulp.src([
-        'bower_components/reveal.js/css/reveal.css'
+        'bower_components/reveal.js/css/reveal.css',
+        'bower_components/highlightjs/styles/monokai.css'
       ])
       .pipe($.concat('vendors.css'))
       .pipe($.minifyCss())
@@ -34,8 +35,10 @@ gulp.task('vendors', function() {
   gulp.src([
       'bower_components/jquery/dist/jquery.js',
       'bower_components/reveal.js/lib/js/head.min.js',
+      'bower_components/highlightjs/highlight.pack.js',
       'bower_components/reveal.js/js/reveal.js',
-      'bower_components/emojify.js/emojify.js'
+      'bower_components/emojify.js/emojify.js',
+      'node_modules/reveal-code-focus/code-focus.js'
     ])
     .pipe($.concat('vendors.min.js'))
     .pipe($.uglify())
