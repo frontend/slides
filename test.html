@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <meta name="description" content="">
+    <meta name="author" content="Yann Gouffon">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/vendors.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      // if( window.location.search.match( /print-pdf/gi ) ) {
+      //   var link = document.createElement( 'link' );
+      //   link.rel = 'stylesheet';
+      //   link.type = 'text/css';
+      //   link.href = 'css/print/pdf.css';
+      //   document.getElementsByTagName( 'head' )[0].appendChild( link );
+      // }
+    </script>
+
+    <!--[if lt IE 9]>
+      <script src="js/polyfills.min.js"></script>
+    <![endif]-->
+
+      </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides">
+        
+        
+
+<section>
+  <h1>Titre de la mort</h1>
+</section>
+
+<section class="card">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et ille ridens: Video, inquit, quid agas; In qua quid est boni praeter summam voluptatem, <b>et eam sempiternam? Illud dico, ea</b>, quae dicat, praeclare inter se cohaerere. O magnam vim ingenii causamque iustam, cur nova existeret disciplina! Perge porro. Tenent mordicus. Duo Reges: constructio interrete. Si quae forte-possumus. Quae quo sunt <i>excelsiores, eo dant clariora indicia naturae. Sed ad haec, nisi molestum est, habeo quae velim. Et quidem, inquit</i>, vehementer errat; Conferam tecum, quam cuique verso rem subicias; Dici enim nihil potest verius.
+  </p>
+</section>
+
+<section>
+  <h3>Some code</h3>
+  <pre><code data-language="js">
+emojify.setConfig({
+    img_dir          : 'img/emoji',  // Directory for emoji images
+    ignored_tags     : {                // Ignore the following tags
+        'SCRIPT'  : 1,
+        'TEXTAREA': 1,
+        'PRE'     : 1,
+        'CODE'    : 1
+    }
+});
+emojify.run();
+  </code></pre>
+</section>
+
+<section>
+  <h3>A fancy arrow schema</h3>
+  <br />
+  <ul>
+    <li class="fragment arrow">Émetteur</li>
+    <li class="fragment arrow mine">Message</li>
+    <li class="fragment arrow">Recepteur</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h3>Avatars ! :smile:</h3>
+  <div class="text-center">
+    <div class="avatar-wrapper bubble">
+      <div class="avatar"><img src="img/avatars/toni.png"><p>Thank </p></div>
+      <div class="avatar"><img src="img/avatars/yann.png"><p>you !</p></div>
+    </div>
+  </div>
+</section>
+
+
+      </div>
+    </div>
+
+    <script src="js/vendors.min.js"></script>
+    <script src="js/main.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        backgroundTransition: 'slide',
+
+        theme: Reveal.getQueryHash().theme,
+        transition: Reveal.getQueryHash().transition || 'fade',
+
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'js/lib/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'js/lib/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'js/lib/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'js/lib/highlight.js', async: true},
+          { src: 'js/lib/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'js/lib/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+
+
+  </body>
+</html>
