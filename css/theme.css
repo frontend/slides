@@ -2077,9 +2077,11 @@ ul li { line-height: 1.6em !important; }
 
 .reveal ul.list-unstyled { list-style-type: none; padding: 10px 0 !important; margin: 0; }
 
+body { background-position: center center !important; }
+
 section[fullscreen-img] { color: #fff !important; text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.8); }
 
-.fullscreen { background-size: cover; -moz-background-size: cover; }
+.fullscreen { background-size: cover; }
 
 .fullscreen .state-background { width: 100%; height: 100%; }
 
