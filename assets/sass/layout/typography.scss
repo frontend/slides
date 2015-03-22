@@ -1,4 +1,4 @@
-.reveal, .reveal p {
+.reveal, .reveal p, .reveal li {
   line-height: $line-height-base !important;
 }
 
@@ -6,9 +6,15 @@ h1, h2 {
   text-transform: uppercase;
 }
 
+.reveal h1 {font-size: $font-size-h1 !important;}
+.reveal h2 {font-size: $font-size-h2 !important;}
+.reveal h3 {font-size: $font-size-h3 !important;}
+.reveal h3 {font-size: $font-size-h3 !important;}
+.reveal h4 {font-size: $font-size-h4 !important;}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: $headings-font-weight !important;
-  margin: 0.2em 0 0.4em 0 !important;
+  margin: 0.2em 0 !important;
 }
 
 ul li {
