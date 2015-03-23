@@ -40,7 +40,8 @@ gulp.task('vendors', function() {
       'bower_components/reveal.js/js/reveal.js',
       'bower_components/emojify.js/emojify.js',
       'node_modules/reveal-code-focus/code-focus.js',
-      'bower_components/slabText/js/jquery.slabtext.js'
+      'bower_components/slabText/js/jquery.slabtext.js',
+      'bower_components/typed.js/dist/typed.min.js'
     ])
     .pipe($.concat('vendors.min.js'))
     .pipe($.uglify())
