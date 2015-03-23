@@ -6,12 +6,35 @@
 <section data-background="#CF4646"  style="color:#fff;">
   <div class="row">
     <div class="col-xs-9">
-      <div style="height:20px"></div>
+      <div style="height:50px"></div>
       <h1>GulpJS</h1>
-      <h2>Running&nbsp;Tasks&nbsp;like&nbsp;a&nbsp;Boss</h2>
+      <h4>Running Tasks like a Boss</h4>
     </div>
     <div class="col-xs-2 col-xs-offset-1">
       <img src="img/gulp-boss/gulp-white.svg" onerror="this.onerror=null; this.src='img/gulp-boss/gulp-white.png'" class="img-responsive img-full">
+    </div>
+  </div>
+</section>
+
+<section fullscreen-img="img/gulp-boss/as-logo.png" fullscreen-size="contain">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-4">
+      <br><br><br><br>
+      <p>
+        <b>Stratégie<br>Design<br>Développement</b>
+      </p>
+    </div>
+  </div>
+</section>
+<section fullscreen-img="img/gulp-boss/as-life.jpg"></section>
+
+<section class="card">
+  <br><br>
+  <div class="text-center">
+    <div class="avatar-wrapper bubble">
+      <div class="avatar"><img src="img/avatars/yann.png" style="margin:-4px 30px 0 30px;"><p><b>Yann</b><br>Frontend dev</p></div>
+      <div class="avatar"><img src="img/avatars/toni.png" style="margin:-4px 30px 0 30px;"><p><b>Toni</b><br>Frontend dev</p></div>
+      <div class="avatar"><img src="img/avatars/marc.png" style="margin:-4px 30px 0 30px;"><p><b>Marc</b><br>Software Designer</p></div>
     </div>
   </div>
 </section>
@@ -157,9 +180,9 @@ gulp.task('default', function() {
     <span id="gulp-basic-term" class="terminal"
           data-command='<span class="t-cyan">gulp</span>'
           data-result="
-            [<span class='t-gray'>19:10:20</span>] Using gulpfile <span class='t-magenta'>~/Sites/gulp-demo/gulpfile.js</span>,
-            [<span class='t-gray'>19:10:20</span>] Starting '<span class='t-cyan'>default</span>'...,
-            [<span class='t-gray'>19:10:20</span>] Finished '<span class='t-cyan'>default</span>' after <span class='t-magenta'>43 μs</span>
+            [<span class='t-gray'>_HOUR_</span>] Using gulpfile <span class='t-magenta'>~/Sites/gulp-demo/gulpfile.js</span>,
+            [<span class='t-gray'>_HOUR_</span>] Starting '<span class='t-cyan'>default</span>'...,
+            [<span class='t-gray'>_HOUR_</span>] Finished '<span class='t-cyan'>default</span>' after <span class='t-magenta'>43 μs</span>
           "></span>
     <span class="fragment" data-terminal="#gulp-basic-term"></span>
   </div>
@@ -196,6 +219,272 @@ gulp.task('default', function() {
             [<span class='t-gray'>_HOUR_</span>] Finished '<span class='t-cyan'>default</span>' after <span class='t-magenta'>894 μs</span>
           "></span>
     <span class="fragment" data-terminal="#first-action-term"></span>
+  </div>
+</section>
+
+<section fullscreen-img="img/gulp-boss/straw-badass.gif">
+  <h1>Les tasks</h1>
+</section>
+
+<section>
+  <h3>Structure d'une task</h3>
+  <br>
+  <pre><code data-language="javascript">
+gulp.task(arg1, arg2, arg3);
+  </code></pre>
+  <pre id="task-structure" class="fragment" data-fragment-index="1"><code data-language="javascript">
+arg1 = name (string) - obligatory
+arg2 = task to launch (string/array) - optional
+arg3 = task (function) - optional
+  </code></pre>
+  <span class="fragment" data-focus="1" data-target="#task-structure" data-fragment-index="2"></span>
+  <span class="fragment" data-focus="2" data-target="#task-structure" data-fragment-index="3"></span>
+  <span class="fragment" data-focus="3" data-target="#task-structure" data-fragment-index="4"></span>
+  <pre class="fragment" data-fragment-index="5"><code data-language="javascript">
+gulp.task('default', ['vendors', 'sass', 'scripts'], function() {
+  gutil.log('Hello World !');
+});
+  </code></pre>
+</section>
+
+<section>
+  <h3>Compiler du SASS</h3>
+  <br>
+  <pre class="fragment" data-fragment-index="1"><code data-language="shell">
+$ npm install --save-dev gulp-sass
+  </code></pre>
+  <p class="fragment" data-fragment-index="2">gulpfile.js :</p>
+  <pre id="sass-compile-basic" class="fragment" data-fragment-index="2"><code data-language="javascript">
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+
+gulp.task('sass', function () {
+    gulp.src('./sass/main.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('./css'));
+});
+
+gulp.task('default', ['sass']);
+  </code></pre>
+  <span class="fragment" data-focus="2" data-target="#sass-compile-basic" data-fragment-index="3"></span>
+  <span class="fragment" data-focus="4,5,6,7,8" data-target="#sass-compile-basic" data-fragment-index="4"></span>
+  <span class="fragment" data-focus="4" data-target="#sass-compile-basic" data-fragment-index="5"></span>
+  <span class="fragment" data-focus="5" data-target="#sass-compile-basic" data-fragment-index="6"></span>
+  <span class="fragment" data-focus="6" data-target="#sass-compile-basic" data-fragment-index="7"></span>
+  <span class="fragment" data-focus="7" data-target="#sass-compile-basic" data-fragment-index="8"></span>
+  <span class="fragment" data-focus="10" data-target="#sass-compile-basic" data-fragment-index="9"></span>
+</section>
+
+<section>
+  <div class="text-center">
+    <img src="img/gulp-boss/pipe-meme.jpg">
+  </div>
+</section>
+
+<section>
+  <h4 class="text-center">Lancement global</h4>
+  <br>
+  <div class="terminal-wrapper">
+    :coffee:frontend: ~/Sites/gulp-demo $ 
+    <span id="sass-compile-basic-term" class="terminal"
+          data-command='<span class="t-cyan">gulp</span>'
+          data-result="
+            [<span class='t-gray'>_HOUR_</span>] Using gulpfile <span class='t-magenta'>~/Sites/gulp-demo/gulpfile.js</span>,
+            [<span class='t-gray'>_HOUR_</span>] Starting '<span class='t-cyan'>sass</span>'...,
+            [<span class='t-gray'>_HOUR_</span>] Finished '<span class='t-cyan'>sass</span>' after <span class='t-magenta'>6.52 ms</span>,
+            [<span class='t-gray'>_HOUR_</span>] Starting '<span class='t-cyan'>default</span>'...,
+            [<span class='t-gray'>_HOUR_</span>] Finished '<span class='t-cyan'>default</span>' after <span class='t-magenta'>6.26 μs</span>
+          "></span>
+    <span class="fragment" data-terminal="#sass-compile-basic-term"></span>
+  </div>
+</section>
+
+<section>
+  <h4 class="text-center">Lancement de la task</h4>
+  <br>
+  <div class="terminal-wrapper">
+    :coffee:frontend: ~/Sites/gulp-demo $ 
+    <span id="sass-compile-basic-sass-term" class="terminal"
+          data-command='<span class="t-cyan">gulp sass</span>'
+          data-result="
+            [<span class='t-gray'>_HOUR_</span>] Using gulpfile <span class='t-magenta'>~/Sites/gulp-demo/gulpfile.js</span>,
+            [<span class='t-gray'>_HOUR_</span>] Starting '<span class='t-cyan'>sass</span>'...,
+            [<span class='t-gray'>_HOUR_</span>] Finished '<span class='t-cyan'>sass</span>' after <span class='t-magenta'>5.63 ms</span>
+          "></span>
+    <span class="fragment" data-terminal="#sass-compile-basic-sass-term"></span>
+  </div>
+</section>
+
+<section fullscreen-img="img/gulp-boss/straw-genius.gif">
+  <h1>Running tasks like a boss !</h1>
+</section>
+
+<section>
+  <h3>Importation des modules <small class="fragment text-danger">The bad way</small></h3>
+  <pre><code data-language="javascript">
+var gulp          = require('gulp'),
+    autoprefixer  = require('gulp-autoprefixer'),
+    concat        = require('gulp-concat'),
+    ghpages       = require('gulp-gh-pages'),
+    hologram      = require('gulp-hologram'),
+    gulpif        = require('gulp-if'),
+    jshint        = require('gulp-jshint'),
+    minifycss     = require('gulp-minify-css'),
+    notify        = require('gulp-notify'),
+    rename        = require('gulp-rename'),
+    sass          = require('gulp-sass'),
+    sourcemaps    = require('gulp-sourcemaps'),
+    twig          = require('gulp-twig'),
+    uglify        = require('gulp-uglify'),
+    util          = require('gulp-util'),
+    jshint        = require('jshint-stylish');
+  </code></pre>
+</section>
+
+<section>
+  <h3>Importation des modules <small class="text-success">The good way :+1:</small></h3>
+  <pre class="fragment"><code data-language="shell">
+$ npm install --save-dev gulp-load-plugins
+  </code></pre>
+  <pre class="fragment"><code data-language="javascript">
+var gulp = require('gulp'),
+    $    = require('gulp-load-plugins')();
+  </code></pre>
+  <pre class="fragment"><code data-language="javascript">
+...
+      .pipe($.sass())
+...
+  </code></pre>
+</section>
+
+<section>
+  <div class="row">
+    <div class="col-sm-7">
+      <h3>Le Gulp Watch  <small class="fragment text-danger" data-fragment-index="4">The bad way</small></h3>
+    </div>
+    <div class="col-sm-5">
+      <img src="img/gulp-boss/got-meme.jpg" class="img-responsive img-full fragment" data-fragment-index="4">
+    </div>
+  </div>
+  <pre id="gulp-watch-bad" class="fragment" data-fragment-index="1"><code data-language="javascript">
+gulp.task('watch', function() {
+  gulp.watch('./vendors/**/*.**', ['vendors', 'styles', 'scripts']);
+  gulp.watch('./assets/sass/*.scss', ['styles']);
+  gulp.watch('./assets/js/*.js', ['scripts']);
+  gulp.watch('./assets/img/*.*', ['build-img']);
+  gulp.watch('./assets/fonts/*.*', ['build-fonts']);
+});
+  </code></pre>
+  <span class="fragment" data-focus="1" data-target="#gulp-watch-bad" data-fragment-index="2"></span>
+  <span class="fragment" data-focus="3" data-target="#gulp-watch-bad" data-fragment-index="3"></span>
+</section>
+
+<section>
+  <div class="text-center">
+    <img src="img/gulp-boss/bs-meme.jpg">
+  </div>
+</section>
+
+<section>
+  <h3>Le Gulp Watch <br><small class="text-success">The good way :+1:</small></h3>
+  <pre class="fragment" data-fragment-index="1"><code data-language="shell">
+$ npm install --save-dev browser-sync run-sequence
+  </code></pre>
+  <pre id="gulp-watch-good" class="fragment" data-fragment-index="2"><code data-language="javascript">
+var gulp = require('gulp'),
+    browserSync = require('browser-sync'),
+    reload = browserSync.reload,
+    runSequence = require('run-sequence');
+//...
+gulp.task('serve', ['styles'], function () {
+  browserSync({
+    server: {
+      baseDir: ['.'],
+    }
+  });
+  gulp.watch(['./sass/**/*.scss'], function() {
+    runSequence('styles', reload);
+  });
+});
+  </code></pre>
+  <span class="fragment" data-focus="2,3" data-target="#gulp-watch-good" data-fragment-index="3"></span>
+  <span class="fragment" data-focus="7,8,9,10,11,12,13,14,15,16" data-target="#gulp-watch-good" data-fragment-index="4"></span>
+  <span class="fragment" data-focus="7" data-target="#gulp-watch-good" data-fragment-index="5"></span>
+  <span class="fragment" data-focus="8,9,10,11,12" data-target="#gulp-watch-good" data-fragment-index="6"></span>
+  <span class="fragment" data-focus="13,14,15" data-target="#gulp-watch-good" data-fragment-index="7"></span>
+</section>
+
+<section>
+  <div class="terminal-wrapper">
+    :coffee:frontend: ~/Sites/gulp-demo $ 
+    <span id="gulp-serve-term-1" class="terminal"
+          data-command='<span class="t-cyan">gulp serve</span>'
+          data-result="
+            [<span class='t-gray'>_HOUR_</span>] Using gulpfile <span class='t-magenta'>~/Sites/gulp-demo/gulpfile.js</span>,
+            [<span class='t-gray'>_HOUR_</span>] Starting '<span class='t-cyan'>styles</span>'...,
+            [<span class='t-gray'>_HOUR_</span>] Finished '<span class='t-cyan'>styles</span>' after <span class='t-magenta'>5.81 ms</span>,
+            [<span class='t-gray'>_HOUR_</span>] Starting '<span class='t-cyan'>serve</span>'...,
+            [<span class='t-gray'>_HOUR_</span>] Finished '<span class='t-cyan'>serve</span>' after <span class='t-magenta'>118 ms</span>,
+            [<span class='t-blue'>BS</span>] <span class='t-white'>Access URLs:</span>,
+            <span class='t-grey'> -------------------------------------</span>,
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Local: <span class='t-magenta'>http://localhost:3000</span>,
+            &nbsp;&nbsp;&nbsp;&nbsp;External: <span class='t-magenta'>http://192.168.0.16:3000</span>,
+            <span class='t-grey'> -------------------------------------</span>,
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UI: <span class='t-magenta'>http://localhost:3001</span>,
+            &nbsp;UI External: <span class='t-magenta'>http://192.168.0.16:3001</span>,
+            <span class='t-grey'> -------------------------------------</span>,
+            [<span class='t-blue'>BS</span>] Serving files from: <span class='t-magenta'>.</span>
+          "></span>
+    <span class="fragment" data-terminal="#gulp-serve-term-1"></span>
+    <span id="gulp-serve-term-2" class="terminal"
+          data-command='<br>'
+          data-result="
+            [<span class='t-gray'>_HOUR_</span>] Starting '<span class='t-cyan'>styles</span>'...,
+            [<span class='t-gray'>_HOUR_</span>] Finished '<span class='t-cyan'>styles</span>' after <span class='t-magenta'>5.83 ms</span>,
+            [<span class='t-blue'>BS</span>] <span class='t-cyan'>Reloading Browsers...</span>
+          "></span>
+    <span class="fragment" data-terminal="#gulp-serve-term-2"></span>
+  </div>
+</section>
+
+<section>
+  <h3>Gulp deploy !</h3>
+  <br>
+  <pre class="fragment" data-fragment-index="1"><code data-language="shell">
+$ npm install --save-dev gulp-gh-pages
+  </code></pre>
+  <pre id="gulp-deploy" class="fragment" data-fragment-index="2"><code data-language="javascript">
+var gulp = require('gulp'),
+    $    = require('gulp-load-plugins')();
+
+gulp.task('deploy', function () {
+  gulp.src("build/**/*")
+    .pipe($.ghPages());
+});
+  </code></pre>
+  <span class="fragment" data-focus="4,5,6,7" data-target="#gulp-deploy" data-fragment-index="3"></span>
+</section>
+
+<section>
+  <i>Qqch d'autres ??</i>
+</section>
+
+<section fullscreen-img="img/gulp-boss/straw-bilan.gif">
+  <h1>Bilan</h1>
+</section>
+
+<section>
+  <i>Gulp c'est cool...</i>
+</section>
+
+<section class="card">
+  <h3>Merci ! :smile:</h3>
+  <div class="text-center">
+    <div class="avatar-wrapper bubble">
+      <div class="avatar"><img src="img/avatars/yann.png"><p>@Yago_0</p>&nbsp;</div>
+      <div class="avatar"><img src="img/avatars/toni.png"><p>@tonifisler</p>&nbsp;&nbsp;</div>
+      <div class="avatar"><img src="img/avatars/marc.png"><p>@zufrieden</p>&nbsp;&nbsp;</div>
+    </div>
   </div>
 </section>
 {% endblock %}
