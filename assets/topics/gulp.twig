@@ -102,8 +102,19 @@ $ brew install node
 <section>
   <h2>Installation</h2>
   <br>
-  <pre><code data-language="bash">
-$ npm install -g gulp
+    <pre><code data-language="bash">
+$ cd path/to/your/project/
+$ npm init
+$ edit package.json
+  </code></pre>
+  <br>
+  <pre><code data-language="json" class="fragment" data-fragment-index="3">
+{
+  "name": "gulp-demo",
+  "devDependencies": {
+    "gulp": "^3.8.11"
+  }
+}
   </code></pre>
 </section>
 
@@ -136,17 +147,17 @@ gulp.task('default', function() {
   </code></pre>
   <div class="code-focus">
     <span class="fragment" data-focus="1" data-state="code"></span>
-    <span class="fragment" data-focus="2" data-state="code"></span>
+    <span class="fragment" data-focus="3,4,5" data-state="code"></span>
   </div>
 </section>
 
 <section>
   <div class="terminal-wrapper">
-    :coffee:frontend: ~/sites/gulp-demo $ 
+    :coffee:frontend: ~/Sites/gulp-demo $ 
     <span id="gulp-basic" class="terminal"
-    data-command='<span class="t-cyan">gulp</span>'
+          data-command='<span class="t-cyan">gulp</span>'
           data-result="
-            [<span class='t-gray'>17:55:20</span>] Using gulpfile <span class='t-magenta'>~/Sites/Lab/gulp-demo/gulpfile.js</span>,
+            [<span class='t-gray'>17:55:20</span>] Using gulpfile <span class='t-magenta'>~/Sites/gulp-demo/gulpfile.js</span>,
             [<span class='t-gray'>17:55:20</span>] Starting '<span class='t-cyan'>default</span>'...,
             [<span class='t-gray'>17:55:20</span>] Finished '<span class='t-cyan'>default</span>' after <span class='t-magenta'>43 μs</span>
           "></span>
