@@ -3,8 +3,8 @@
 (function($, Reveal){
   function launchTerminal (event) {
     var $this = $(event.fragment);
-    if (typeof $this.attr("data-terminal") !== typeof undefined) {
-      var $terminal = $($this.data("terminal")),
+    if (typeof $this.attr('data-terminal') !== typeof undefined) {
+      var $terminal = $($this.data('terminal')),
           command = $terminal.data('command'),
           result = $terminal.data('result');
 
@@ -41,8 +41,8 @@
 
   function resetTerminal (event) {
     var $this = $(event.fragment);
-    if (typeof $this.attr("data-terminal") !== typeof undefined) {
-      var $terminal = $($this.data("terminal"));
+    if (typeof $this.attr('data-terminal') !== typeof undefined) {
+      var $terminal = $($this.data('terminal'));
       $terminal.next('.terminal-render').remove();
       $terminal.next('.typed-cursor').remove();
     }
