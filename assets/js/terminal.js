@@ -1,12 +1,31 @@
 'use strict';
 
 (function($, Reveal){
+  function getHour () {
+    var currentdate = new Date(); 
+    var currenthour = currentdate.getHours() + ":"  
+                      + currentdate.getMinutes() + ":" 
+                      + currentdate.getSeconds();
+    return currenthour;
+  }
+
+  function getDate () {
+    var currentdate = new Date(); 
+    var currenthour = currentdate.getFullYear() + "-"  
+                      + (currentdate.getMonth()+1) + "-" 
+                      + currentdate.getDate();
+    return currenthour;
+  }
+
   function launchTerminal (event) {
     var $this = $(event.fragment);
     if (typeof $this.attr('data-terminal') !== typeof undefined) {
       var $terminal = $($this.data('terminal')),
           command = $terminal.data('command'),
           result = $terminal.data('result');
+
+      result = result.replace(new RegExp("\_HOUR\_","gm"), getHour());
+      result = result.replace(new RegExp("\_DATE\_","gm"), getDate());
 
       $('<span class="terminal-render"></span>').insertAfter($terminal);
       var $render = $terminal.next('.terminal-render');
@@ -25,7 +44,7 @@
               for (var i = 0; i < results.length; i++) {
                 setTimeout(function(x) { return function() {
                   $render.append('<br>'+results[x]);
-                }; }(i), 300*i);
+                }; }(i), 200*i);
               }
             } else {
               setTimeout(function(){

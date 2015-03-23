@@ -2,18 +2,20 @@
 
 (function($, Reveal){
   function focusCode (event) {
-    var $this = $(event.fragment);
+    var $this = $(event.fragment),
+        $targetID = $this.attr("data-target"),
+        $target = $($targetID);
     if (typeof $this.attr("data-focus") !== typeof undefined) {
       var lineData = $this.data('focus');
       if (String(lineData).match(/\,/g)) {
         var lines = lineData.split(',');
-        $this.parents('section').find('pre .rainbow-line').css('opacity', '0.3');
+        $target.find('.rainbow-line').css('opacity', '0.4');
         lines.forEach(function(line) {
-          $this.parents('section').find('pre .rainbow-line-'+line).css('opacity', '1');
+          $target.find('.rainbow-line-'+line).css('opacity', '1');
         });
       } else {
-        $this.parents('section').find('pre .rainbow-line').css('opacity', '0.3');
-        $this.parents('section').find('pre .rainbow-line-'+lineData).css('opacity', '1');
+        $target.find('.rainbow-line').css('opacity', '0.4');
+        $target.find('.rainbow-line-'+lineData).css('opacity', '1');
       }
     }
   }

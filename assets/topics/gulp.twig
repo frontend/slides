@@ -94,7 +94,7 @@
     </div>
   </div>
 
-  <pre class="fragment" data-fragment-index="2"><code data-language="bash">
+  <pre class="fragment" data-fragment-index="2"><code data-language="shell">
 $ brew install node
   </code></pre>
 </section>
@@ -102,13 +102,17 @@ $ brew install node
 <section>
   <h2>Installation</h2>
   <br>
-    <pre><code data-language="bash">
+  <pre id="gulp-install"><code data-language="shell">
 $ cd path/to/your/project/
 $ npm init
-$ edit package.json
+$ npm install --save-dev gulp
   </code></pre>
-  <h3>package.json</h3>
-  <pre class="fragment"><code data-language="json">
+  <span class="fragment" data-focus="1" data-target="#gulp-install" data-fragment-index="1"></span>
+  <span class="fragment" data-focus="2" data-target="#gulp-install" data-fragment-index="2"></span>
+  <span class="fragment" data-focus="3" data-target="#gulp-install" data-fragment-index="3"></span>
+
+  <p class="fragment" data-fragment-index="4">package.json :</p>
+  <pre class="fragment" data-fragment-index="4"><code data-language="json">
 {
   "name": "gulp-demo",
   "devDependencies": {
@@ -125,48 +129,74 @@ $ edit package.json
 <section>
   <h3>Création</h3>
   <br>
-  <pre><code data-language="bash">
+  <pre id="create-gulpfile"><code data-language="shell">
 $ cd path/to/your/project/
 $ touch gulpfile.js
   </code></pre>
-  <div class="code-focus">
-    <span class="fragment" data-focus="1" data-state="code"></span>
-    <span class="fragment" data-focus="2" data-state="code"></span>
-  </div>
+  <span class="fragment" data-focus="1" data-target="#create-gulpfile"></span>
+  <span class="fragment" data-focus="2" data-target="#create-gulpfile"></span>
 </section>
 
 <section>
   <h3>Gulpfile basique</h3>
   <br>
-  <pre><code data-language="javascript">
+  <pre id="basic-gulpfile"><code data-language="javascript">
 var gulp = require('gulp');
 
 gulp.task('default', function() {
   // Some code here...
 });
   </code></pre>
-  <div class="code-focus">
-    <span class="fragment" data-focus="1" data-state="code"></span>
-    <span class="fragment" data-focus="3,4,5" data-state="code"></span>
-  </div>
+  <span class="fragment" data-focus="1" data-target="#basic-gulpfile"></span>
+  <span class="fragment" data-focus="3,4,5" data-target="#basic-gulpfile"></span>
 </section>
 
 <section>
   <div class="terminal-wrapper">
     :coffee:frontend: ~/Sites/gulp-demo $ 
-    <span id="gulp-basic" class="terminal"
+    <span id="gulp-basic-term" class="terminal"
           data-command='<span class="t-cyan">gulp</span>'
           data-result="
-            [<span class='t-gray'>17:55:20</span>] Using gulpfile <span class='t-magenta'>~/Sites/gulp-demo/gulpfile.js</span>,
-            [<span class='t-gray'>17:55:20</span>] Starting '<span class='t-cyan'>default</span>'...,
-            [<span class='t-gray'>17:55:20</span>] Finished '<span class='t-cyan'>default</span>' after <span class='t-magenta'>43 μs</span>
+            [<span class='t-gray'>19:10:20</span>] Using gulpfile <span class='t-magenta'>~/Sites/gulp-demo/gulpfile.js</span>,
+            [<span class='t-gray'>19:10:20</span>] Starting '<span class='t-cyan'>default</span>'...,
+            [<span class='t-gray'>19:10:20</span>] Finished '<span class='t-cyan'>default</span>' after <span class='t-magenta'>43 μs</span>
           "></span>
-    <span class="fragment" data-terminal="#gulp-basic"></span>
+    <span class="fragment" data-terminal="#gulp-basic-term"></span>
   </div>
 </section>
 
 <section>
-  blabla
+  <h3>Première action</h3>
+  <br>
+  <pre class="fragment" data-fragment-index="1"><code data-language="shell">
+$ npm install --save-dev gulp-util
+  </code></pre>
+  <p class="fragment" data-fragment-index="2">gulpfile.js :</p>
+  <pre id="first-action" class="fragment" data-fragment-index="2"><code data-language="javascript">
+var gulp  = require('gulp');
+var gutil = require('gulp-util');
+
+gulp.task('default', function() {
+  gutil.log('Hello World !');
+});
+  </code></pre>
+  <span class="fragment" data-focus="2" data-target="#first-action" data-fragment-index="3"></span>
+  <span class="fragment" data-focus="5" data-target="#first-action" data-fragment-index="4"></span>
+</section>
+
+<section>
+  <div class="terminal-wrapper">
+    :coffee:frontend: ~/Sites/gulp-demo $ 
+    <span id="first-action-term" class="terminal"
+          data-command='<span class="t-cyan">gulp</span>'
+          data-result="
+            [<span class='t-gray'>_HOUR_</span>] Using gulpfile <span class='t-magenta'>~/Sites/gulp-demo/gulpfile.js</span>,
+            [<span class='t-gray'>_HOUR_</span>] Starting '<span class='t-cyan'>default</span>'...,
+            [<span class='t-gray'>_HOUR_</span>] Hello World !,
+            [<span class='t-gray'>_HOUR_</span>] Finished '<span class='t-cyan'>default</span>' after <span class='t-magenta'>894 μs</span>
+          "></span>
+    <span class="fragment" data-terminal="#first-action-term"></span>
+  </div>
 </section>
 {% endblock %}
 
