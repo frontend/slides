@@ -50,7 +50,7 @@
 
 <section id="section">
   <h3>Some code focus</h3>
-  <pre><code data-language="js">
+  <pre id="code"><code data-language="js">
 emojify.setConfig({
     img_dir          : 'img/emoji',  // Directory for emoji images
     ignored_tags     : {                // Ignore the following tags
@@ -62,10 +62,8 @@ emojify.setConfig({
 });
 emojify.run();
   </code></pre>
-  <div class="code-focus">
-    <span class="fragment" data-focus="3,4,5,6" data-state="code"></span>
-    <span class="fragment" data-focus="10" data-state="code"></span>
-  </div>
+  <span class="fragment" data-focus="3,4,5,6" data-target="#code"></span>
+  <span class="fragment" data-focus="10" data-target="#code"></span>
 </section>
 
 <section>

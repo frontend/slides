@@ -2,18 +2,20 @@
 
 (function($, Reveal){
   function focusCode (event) {
-    var $this = $(event.fragment);
+    var $this = $(event.fragment),
+        $targetID = $this.attr("data-target"),
+        $target = $($targetID);
     if (typeof $this.attr("data-focus") !== typeof undefined) {
       var lineData = $this.data('focus');
       if (String(lineData).match(/\,/g)) {
         var lines = lineData.split(',');
-        $this.parents('section').find('pre .rainbow-line').css('opacity', '0.3');
+        $target.find('.rainbow-line').css('opacity', '0.4');
         lines.forEach(function(line) {
-          $this.parents('section').find('pre .rainbow-line-'+line).css('opacity', '1');
+          $target.find('.rainbow-line-'+line).css('opacity', '1');
         });
       } else {
-        $this.parents('section').find('pre .rainbow-line').css('opacity', '0.3');
-        $this.parents('section').find('pre .rainbow-line-'+lineData).css('opacity', '1');
+        $target.find('.rainbow-line').css('opacity', '0.4');
+        $target.find('.rainbow-line-'+lineData).css('opacity', '1');
       }
     }
   }
@@ -43,9 +45,9 @@ emojify.run();
   var BGR;
 
   function fullscreen(event) {
-    var url = event.currentSlide.getAttribute("fullscreen-img");
+    var url = event.currentSlide.getAttribute('fullscreen-img');
     if(url) {
-      if(typeof BGR == "undefined")
+      if(typeof BGR === 'undefined')
       {
         // Store background value
         BGR = document.body.style.background;
@@ -53,25 +55,25 @@ emojify.run();
 
       // Set image from fullscreen-img attribute as body background
       document.body.style.backgroundImage = "url('" + url + "')";
-      var size = event.currentSlide.getAttribute("fullscreen-size");
-      if(size != "contain") {
-        document.body.style.backgroundSize = "cover";
+      var size = event.currentSlide.getAttribute('fullscreen-size');
+      if(size !== 'contain') {
+        document.body.style.backgroundSize = 'cover';
       }
       else {
         // Put image in 'contain' mode with black background
         // TODO store background color and use it. This is possible by regexping
         // the background property and replacing the 2nd value by the image url.
         // See http://www.w3schools.com/cssref/css3_pr_background.asp
-        document.body.style.backgroundColor = "#000000";
-        document.body.style.backgroundSize  = "contain";
-        document.body.style.backgroundRepeat = "no-repeat";
-        document.body.style.backgroundAttachment = "fixed";
-        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundColor = '#000000';
+        document.body.style.backgroundSize  = 'contain';
+        document.body.style.backgroundRepeat = 'no-repeat';
+        document.body.style.backgroundAttachment = 'fixed';
+        document.body.style.backgroundPosition = 'center center';
       }
     }
     else { 
-      if(typeof BGR != "undefined") { 
-        document.body.style.backgroundImage = "none";
+      if(typeof BGR !== 'undefined') { 
+        document.body.style.backgroundImage = 'none';
         document.body.style.background      = BGR;
       } 
     }
@@ -166,12 +168,31 @@ if (window.Rainbow) window.Rainbow.linecount = (function(Rainbow) {
 'use strict';
 
 (function($, Reveal){
+  function getHour () {
+    var currentdate = new Date(); 
+    var currenthour = currentdate.getHours() + ":"  
+                      + currentdate.getMinutes() + ":" 
+                      + currentdate.getSeconds();
+    return currenthour;
+  }
+
+  function getDate () {
+    var currentdate = new Date(); 
+    var currenthour = currentdate.getFullYear() + "-"  
+                      + (currentdate.getMonth()+1) + "-" 
+                      + currentdate.getDate();
+    return currenthour;
+  }
+
   function launchTerminal (event) {
     var $this = $(event.fragment);
-    if (typeof $this.attr("data-terminal") !== typeof undefined) {
-      var $terminal = $($this.data("terminal")),
+    if (typeof $this.attr('data-terminal') !== typeof undefined) {
+      var $terminal = $($this.data('terminal')),
           command = $terminal.data('command'),
           result = $terminal.data('result');
+
+      result = result.replace(new RegExp("\_HOUR\_","gm"), getHour());
+      result = result.replace(new RegExp("\_DATE\_","gm"), getDate());
 
       $('<span class="terminal-render"></span>').insertAfter($terminal);
       var $render = $terminal.next('.terminal-render');
@@ -190,7 +211,7 @@ if (window.Rainbow) window.Rainbow.linecount = (function(Rainbow) {
               for (var i = 0; i < results.length; i++) {
                 setTimeout(function(x) { return function() {
                   $render.append('<br>'+results[x]);
-                }; }(i), 300*i);
+                }; }(i), 200*i);
               }
             } else {
               setTimeout(function(){
@@ -206,8 +227,8 @@ if (window.Rainbow) window.Rainbow.linecount = (function(Rainbow) {
 
   function resetTerminal (event) {
     var $this = $(event.fragment);
-    if (typeof $this.attr("data-terminal") !== typeof undefined) {
-      var $terminal = $($this.data("terminal"));
+    if (typeof $this.attr('data-terminal') !== typeof undefined) {
+      var $terminal = $($this.data('terminal'));
       $terminal.next('.terminal-render').remove();
       $terminal.next('.typed-cursor').remove();
     }
@@ -220,10 +241,3 @@ if (window.Rainbow) window.Rainbow.linecount = (function(Rainbow) {
     resetTerminal(event);
   });
 }(jQuery, Reveal));
-'use strict';
-
-(function($){
-  $('.reveal section:first-child').find('h1, h2, h3').slabText({
-      'viewportBreakpoint':380
-  });
-}(jQuery));
