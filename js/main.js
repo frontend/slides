@@ -170,17 +170,17 @@ if (window.Rainbow) window.Rainbow.linecount = (function(Rainbow) {
 (function($, Reveal){
   function getHour () {
     var currentdate = new Date(); 
-    var currenthour = currentdate.getHours() + ":"  
-                      + currentdate.getMinutes() + ":" 
-                      + currentdate.getSeconds();
+    var currenthour = ('0' + currentdate.getHours()).slice(-2) + ':' +
+                      ('0' + currentdate.getMinutes()).slice(-2) + ':' +
+                      ('0' + currentdate.getSeconds()).slice(-2);
     return currenthour;
   }
 
   function getDate () {
     var currentdate = new Date(); 
-    var currenthour = currentdate.getFullYear() + "-"  
-                      + (currentdate.getMonth()+1) + "-" 
-                      + currentdate.getDate();
+    var currenthour = currentdate.getFullYear() + '-' +
+                      (currentdate.getMonth()+1) + '-' +
+                      currentdate.getDate();
     return currenthour;
   }
 
@@ -191,8 +191,8 @@ if (window.Rainbow) window.Rainbow.linecount = (function(Rainbow) {
           command = $terminal.data('command'),
           result = $terminal.data('result');
 
-      result = result.replace(new RegExp("\_HOUR\_","gm"), getHour());
-      result = result.replace(new RegExp("\_DATE\_","gm"), getDate());
+      result = result.replace(new RegExp('_HOUR_','gm'), getHour());
+      result = result.replace(new RegExp('_DATE_','gm'), getDate());
 
       $('<span class="terminal-render"></span>').insertAfter($terminal);
       var $render = $terminal.next('.terminal-render');
