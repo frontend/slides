@@ -1,4 +1,4 @@
-.reveal, .reveal p, .reveal li {
+.reveal, .reveal p, .reveal li, .reveal blockquote {
   line-height: $line-height-base !important;
 }
 
@@ -29,4 +29,11 @@ ul li {
 
 .reveal sup {
   vertical-align: middle !important;
+}
+
+.reveal blockquote {
+  box-shadow: none;
+  padding-left: 1em;
+  margin: 0;
+  width: 100%;
 }
