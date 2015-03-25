@@ -1,0 +1,11 @@
+.spacer{height:65px}
+.spacer.spacer-xl{height:120px}
+.spacer.spacer-lg{height:90px}
+.spacer.spacer-sm{height:30px}
+.spacer.spacer-xs{height:10px}
+@media only screen and (max-width:767px){
+  .spacer{height:30px}
+  .spacer.spacer-lg,.spacer.spacer-xl{height:50px}
+  .spacer.spacer-sm{height:20px}
+  .spacer.spacer-xs{height:10px}
+}
