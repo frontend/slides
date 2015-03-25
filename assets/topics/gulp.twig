@@ -3,6 +3,14 @@
 {% block transition %}fade{% endblock %}
 
 {% block content %}
+<section fullscreen-img="img/gulp-boss/frontend-meetup.png" class="text-center">
+  <div class="spacer spacer-xl"></div>
+  <div class="spacer spacer-xl"></div>
+  <div class="spacer spacer-xl"></div>
+  <h1 style="text-shadow:none;display:inline;">1</h1>
+  <h3 style="text-shadow:none;display:inline;"><sup>er</sup><br>Frontend Meetup - Romandie :tada:</h3>
+</section>
+
 <section data-background="#CF4646"  style="color:#fff;">
   <div class="row">
     <div class="col-xs-9">
@@ -34,7 +42,7 @@
     <div class="avatar-wrapper bubble">
       <div class="avatar"><img src="img/avatars/yann.png" style="margin:-4px 30px 0 30px;"><p><b>Yann</b><br>Frontend dev</p></div>
       <div class="avatar"><img src="img/avatars/toni.png" style="margin:-4px 30px 0 30px;"><p><b>Toni</b><br>Frontend dev</p></div>
-      <div class="avatar"><img src="img/avatars/marc.png" style="margin:-4px 30px 0 30px;"><p><b>Marc</b><br>Software Designer</p></div>
+      {# <div class="avatar"><img src="img/avatars/marc.png" style="margin:-4px 30px 0 30px;"><p><b>Marc</b><br>Software Designer</p></div> #}
     </div>
   </div>
 </section>
@@ -176,7 +184,7 @@ gulp.task('default', function() {
 
 <section>
   <div class="terminal-wrapper">
-    :coffee:frontend: ~/Sites/gulp-demo $ 
+    :coffee:frontend: ~/Sites/gulp-demo $
     <span id="gulp-basic-term" class="terminal"
           data-command='<span class="t-cyan">gulp</span>'
           data-result="
@@ -209,7 +217,7 @@ gulp.task('default', function() {
 
 <section>
   <div class="terminal-wrapper">
-    :coffee:frontend: ~/Sites/gulp-demo $ 
+    :coffee:frontend: ~/Sites/gulp-demo $
     <span id="first-action-term" class="terminal"
           data-command='<span class="t-cyan">gulp</span>'
           data-result="
@@ -285,7 +293,7 @@ gulp.task('default', ['sass']);
   <h4 class="text-center">Lancement global</h4>
   <br>
   <div class="terminal-wrapper">
-    :coffee:frontend: ~/Sites/gulp-demo $ 
+    :coffee:frontend: ~/Sites/gulp-demo $
     <span id="sass-compile-basic-term" class="terminal"
           data-command='<span class="t-cyan">gulp</span>'
           data-result="
@@ -303,7 +311,7 @@ gulp.task('default', ['sass']);
   <h4 class="text-center">Lancement de la task</h4>
   <br>
   <div class="terminal-wrapper">
-    :coffee:frontend: ~/Sites/gulp-demo $ 
+    :coffee:frontend: ~/Sites/gulp-demo $
     <span id="sass-compile-basic-sass-term" class="terminal"
           data-command='<span class="t-cyan">gulp sass</span>'
           data-result="
@@ -408,15 +416,15 @@ gulp.task('serve', ['styles'], function () {
 });
   </code></pre>
   <span class="fragment" data-focus="2,3" data-target="#gulp-watch-good" data-fragment-index="3"></span>
-  <span class="fragment" data-focus="7,8,9,10,11,12,13,14,15,16" data-target="#gulp-watch-good" data-fragment-index="4"></span>
-  <span class="fragment" data-focus="7" data-target="#gulp-watch-good" data-fragment-index="5"></span>
-  <span class="fragment" data-focus="8,9,10,11,12" data-target="#gulp-watch-good" data-fragment-index="6"></span>
-  <span class="fragment" data-focus="13,14,15" data-target="#gulp-watch-good" data-fragment-index="7"></span>
+  <span class="fragment" data-focus="6,7,8,9,10,11,12,13,14,15" data-target="#gulp-watch-good" data-fragment-index="4"></span>
+  <span class="fragment" data-focus="6" data-target="#gulp-watch-good" data-fragment-index="5"></span>
+  <span class="fragment" data-focus="7,8,9,10,11" data-target="#gulp-watch-good" data-fragment-index="6"></span>
+  <span class="fragment" data-focus="12,13,14" data-target="#gulp-watch-good" data-fragment-index="7"></span>
 </section>
 
 <section>
   <div class="terminal-wrapper">
-    :coffee:frontend: ~/Sites/gulp-demo $ 
+    :coffee:frontend: ~/Sites/gulp-demo $
     <span id="gulp-serve-term-1" class="terminal"
           data-command='<span class="t-cyan">gulp serve</span>'
           data-result="
@@ -465,6 +473,19 @@ gulp.task('deploy', function () {
   <span class="fragment" data-focus="4,5,6,7" data-target="#gulp-deploy" data-fragment-index="3"></span>
 </section>
 
+
+<section class="text-center">
+  <h3>Toutes nos tasks</h3>
+  <br>
+  <img src="img/gulp-boss/yeoman.svg" onerror="this.onerror=null; this.src='img/gulp-boss/yeoman.png'" alt="alt" />
+  <div class="spacer spacer-sm"></div>
+  <a href="https://github.com/tonifisler/generator-styleguide">:octocat:Toni - Styleguide Generator</a>
+</section>
+
+<section fullscreen-img="img/gulp-boss/straw-bilan.gif">
+  <h1>Bilan</h1>
+</section>
+
 <section>
   <h2>Nos expériences</h2>
   <br>
@@ -499,12 +520,17 @@ gulp.task('deploy', function () {
   </ul>
 </section>
 
-<section fullscreen-img="img/gulp-boss/straw-bilan.gif">
-  <h1>Bilan</h1>
+<section>
+  <ul>
+    <li class="fragment">~5'050 modules Gulp</li>
+    <li class="fragment">135'019 modules Node</li>
+    <li class="fragment">:point_right: Beaucoup de ressources/possibilités</li>
 </section>
 
-<section>
-  <i>Gulp c'est cool...</i>
+<section class="card">
+  <blockquote>
+    “Gulp est une machine à tout faire. <span class="fragment">Tous les processus récurents que vous faites avec une app,</span> <span class="fragment"><b>Gulp peut le faire&nbsp;!</b>”</span>
+  </blockquote>
 </section>
 
 <section class="card">
@@ -513,7 +539,7 @@ gulp.task('deploy', function () {
     <div class="avatar-wrapper bubble">
       <div class="avatar"><img src="img/avatars/yann.png"><p>@Yago_0</p>&nbsp;</div>
       <div class="avatar"><img src="img/avatars/toni.png"><p>@tonifisler</p>&nbsp;&nbsp;</div>
-      <div class="avatar"><img src="img/avatars/marc.png"><p>@zufrieden</p>&nbsp;&nbsp;</div>
+      {# <div class="avatar"><img src="img/avatars/marc.png"><p>@zufrieden</p>&nbsp;&nbsp;</div> #}
     </div>
   </div>
 </section>
